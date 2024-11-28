@@ -1,8 +1,7 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/room-info">客室管理</router-link>
+    <router-link to="/">客室管理</router-link> |
+    <router-link to="/about">About</router-link>
   </nav>
   <router-view/>
 </template>
@@ -13,6 +12,7 @@
 :root {
   --vue: #42b983;
   --font: #101010;
+  --gbc: #f8f8f8;
   --eight: #d08eff;
   --eight-cover: #f0dbff;
   --seven: #fabfff;
@@ -21,10 +21,10 @@
   --six-cover: #eeffea;
   --five: #ffdc96;
   --five-cover: #fff6e6;
-  --four: #adfffe;
-  --four-cover: #eaffff;
-  --vip: #b1adff;
-  --vip-cover: #eaeaff;
+  --four: #8fd2ff;
+  --four-cover: #eaf7ff;
+  --vip: #f7e388;
+  --vip-cover: #fff5dc;
 }
 
 * {
@@ -61,21 +61,29 @@ select {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  padding: 0 20px 50px 20px;
+  min-height: 100svh;
   color: var(--font);
-  padding: 0 20px;
+  background-color: var(--gbc);
+}
+
+body {
+  margin: 0;
 }
 
 nav {
   padding: 30px;
 }
-
 nav a {
   font-weight: 700;
   color: #2c3e50;
 }
-
 nav a.router-link-exact-active {
   color: var(--vue);
+}
+
+h1 {
+  font-weight: 700;
 }
 
 h2 {
@@ -88,6 +96,24 @@ h2 {
   padding: 5px 0 5px 10px;
   border-left: 15px solid var(--vue);
   margin: 20px 0 10px 0;
-  background-color: #f7f7f7;
+  background-color: #fff;
+}
+
+button, a, input[type='button'], input[type='submit'], select {
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+}
+
+button, input[type='button'], input[type='submit'] {
+  display: block;
+  font-weight: 600;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  color: var(--font);
+  background-color: #fff;
+  box-shadow: 1px 1px 8px #cacaca;
 }
 </style>
